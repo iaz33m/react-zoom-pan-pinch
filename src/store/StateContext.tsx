@@ -336,7 +336,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       } = this.stateProvider;
 
       // start velocity animation
-      if (this.velocity && velocity && scale > 1) {
+      if (this.velocity && velocity && scale > 0) {
         animateVelocity.call(this);
       } else {
         // fire fit to bounds animation

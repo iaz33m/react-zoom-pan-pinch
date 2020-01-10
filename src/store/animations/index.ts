@@ -42,6 +42,17 @@ export function animate(animationName, animationTime, callback) {
 export function animateComponent({ targetState, speed, type }) {
   const { scale, positionX, positionY } = this.stateProvider;
 
+  let x = targetState.positionX;
+  let y = targetState.positionY;
+
+  console.log({x,y});
+
+  if(targetState.scale < 1){
+    x = '0';
+    y = '0';
+    console.log('new x, y',x,y);
+  }
+
   const scaleDiff = targetState.scale - scale;
   const positionXDiff = targetState.positionX - positionX;
   const positionYDiff = targetState.positionY - positionY;
