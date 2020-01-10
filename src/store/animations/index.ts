@@ -44,24 +44,21 @@ export function animateComponent({ targetState, speed, type }) {
 
   let x = targetState.positionX;
   let y = targetState.positionY;
-
-  console.log({x,y});
-
+  
   if(targetState.scale < 1){
-    x = '0';
-    y = '0';
-    console.log('new x, y',x,y);
+    x = 0;
+    y = 0;
   }
 
   const scaleDiff = targetState.scale - scale;
-  const positionXDiff = targetState.positionX - positionX;
-  const positionYDiff = targetState.positionY - positionY;
+  const positionXDiff = x - positionX;
+  const positionYDiff = y - positionY;
 
   if (speed === 0) {
     this.stateProvider.previousScale = this.stateProvider.scale;
     this.stateProvider.scale = targetState.scale;
-    this.stateProvider.positionX = targetState.positionX;
-    this.stateProvider.positionY = targetState.positionY;
+    this.stateProvider.positionX = x;
+    this.stateProvider.positionY = y;
     this.applyTransformation();
   } else {
     // animation start timestamp

@@ -12,7 +12,7 @@ export const initialState = {
     maxPositionX: null,
     minPositionY: null,
     maxPositionY: null,
-    minScale: 0.00001,
+    minScale: 0.25,
     maxScale: 8,
     limitToBounds: true,
     centerContent: true,
