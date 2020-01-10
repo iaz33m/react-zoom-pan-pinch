@@ -1,8 +1,8 @@
 export const initialState = {
   wrapperComponent: null,
   contentComponent: null,
-  previousScale: 1,
-  scale: 1,
+  previousScale: 0.35,
+  scale: 0.35,
   positionX: 0,
   positionY: 0,
   options: {
@@ -12,7 +12,7 @@ export const initialState = {
     maxPositionX: null,
     minPositionY: null,
     maxPositionY: null,
-    minScale: 0.25,
+    minScale: 0.3,
     maxScale: 8,
     limitToBounds: true,
     centerContent: true,
