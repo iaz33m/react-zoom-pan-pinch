@@ -608,6 +608,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       positionY}px) scale(${newScale || scale})`;
     contentComponent.style.transform = transform;
     contentComponent.style.WebkitTransform = transform;
+    console.log({transform});
     // force update to inject state to the context
     this.forceUpdate();
     if (onZoomChange && previousScale !== scale) {
