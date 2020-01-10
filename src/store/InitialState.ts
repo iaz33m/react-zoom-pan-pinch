@@ -1,8 +1,14 @@
+const viewPortWidth = window.innerWidth;
+let defaultScale = viewPortWidth / 1000;
+if (defaultScale > 1) {
+  defaultScale = 1;
+}
+
 export const initialState = {
   wrapperComponent: null,
   contentComponent: null,
-  previousScale: 0.35,
-  scale: 0.35,
+  previousScale: defaultScale,
+  scale: defaultScale,
   positionX: 0,
   positionY: 0,
   options: {
