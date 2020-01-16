@@ -7,6 +7,7 @@ if (defaultScale > 1) {
 export const initialState = {
   wrapperComponent: null,
   contentComponent: null,
+  resetScale:defaultScale,
   previousScale: defaultScale,
   scale: defaultScale,
   positionX: 0,

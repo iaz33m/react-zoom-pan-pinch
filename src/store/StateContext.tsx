@@ -462,6 +462,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       positionX,
       positionY,
       scale,
+      resetScale,
       options: { disabled },
     } = this.stateProvider;
     const { wrapperComponent, contentComponent } = this.state;
@@ -470,6 +471,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       positionX,
       positionY,
       scale: isNaN(newScale) ? scale : newScale,
+      resetScale
     };
 
     animateComponent.call(this, {
@@ -484,6 +486,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       positionX,
       positionY,
       scale,
+      resetScale,
       options: { disabled, transformEnabled },
     } = this.stateProvider;
     const { wrapperComponent, contentComponent } = this.state;
@@ -493,6 +496,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       positionX: isNaN(newPosX) ? positionX : newPosX,
       positionY,
       scale,
+      resetScale
     };
 
     animateComponent.call(this, {
@@ -507,6 +511,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       positionX,
       scale,
       positionY,
+      resetScale,
       options: { disabled, transformEnabled },
     } = this.stateProvider;
     const { wrapperComponent, contentComponent } = this.state;
@@ -517,6 +522,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       positionX,
       positionY: isNaN(newPosY) ? positionY : newPosY,
       scale,
+      resetScale,
     };
 
     animateComponent.call(this, {
@@ -537,6 +543,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       positionX,
       positionY,
       scale,
+      resetScale,
       options: { disabled, transformEnabled },
     } = this.stateProvider;
     const { wrapperComponent, contentComponent } = this.state;
@@ -547,6 +554,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       positionX: isNaN(newPosX) ? positionX : newPosX,
       positionY: isNaN(newPosY) ? positionY : newPosY,
       scale: isNaN(newScale) ? scale : newScale,
+      resetScale,
     };
 
     animateComponent.call(this, {

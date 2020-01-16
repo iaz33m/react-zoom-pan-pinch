@@ -40,12 +40,12 @@ export function animate(animationName, animationTime, callback) {
 }
 
 export function animateComponent({ targetState, speed, type }) {
-  const { scale, positionX, positionY } = this.stateProvider;
+  const { scale, positionX, positionY,resetScale } = this.stateProvider;
 
   let x = targetState.positionX;
   let y = targetState.positionY;
   
-  if(targetState.scale < 1){
+  if(targetState.scale < resetScale){
     x = 0;
     y = 0;
   }
