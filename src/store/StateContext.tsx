@@ -618,6 +618,8 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
     if(scale <= resetScale){
       transform = `translate(0px, 0px) scale(${newScale || scale})`;
     }
+
+    console.log({transform,resetScale});
     
     contentComponent.style.transform = transform;
     contentComponent.style.WebkitTransform = transform;
