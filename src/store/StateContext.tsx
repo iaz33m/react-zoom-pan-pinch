@@ -609,14 +609,19 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
     if (!this.mounted) return;
     const { contentComponent } = this.state;
     const { onZoomChange } = this.props;
-    const { previousScale, scale, positionX, positionY } = this.stateProvider;
+    const { previousScale, scale, positionX, positionY,resetScale } = this.stateProvider;
     if (!contentComponent)
       return console.error("There is no content component");
-    const transform = `translate(${posX || positionX}px, ${posY ||
-      positionY}px) scale(${newScale || scale})`;
+    
+    let transform = `translate(${posX || positionX}px, ${posY || positionY}px) scale(${newScale || scale})`;
+
+    if(scale <= resetScale){
+      transform = `translate(0px, 0px) scale(${newScale || scale})`;
+    }
+    
     contentComponent.style.transform = transform;
     contentComponent.style.WebkitTransform = transform;
-    console.log({transform});
+
     // force update to inject state to the context
     this.forceUpdate();
     if (onZoomChange && previousScale !== scale) {
