@@ -19,16 +19,26 @@ class TransformComponent extends React.Component {
         positionX,
         positionY,
         scale,
+        resetScale,
         options: { wrapperClass, contentClass },
       },
     } = this.context;
 
-    console.log({positionX,positionY});
+    let x = positionX;
+    let y = positionY;
+    
+    if(scale <= resetScale){
+      x = 0;      
+      y = 0;      
+    }
+    
+    console.log({x,y});
     
     const style = {
-      WebkitTransform: `translate(${positionX}px, ${positionY}px) scale(${scale})`,
-      transform: `translate(${positionX}px, ${positionY}px) scale(${scale})`,
+      WebkitTransform: `translate(${x}px, ${y}px) scale(${scale})`,
+      transform: `translate(${x}px, ${y}px) scale(${scale})`,
     };
+    
     return (
       <div
         ref={this.wrapperRef}
