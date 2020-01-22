@@ -174,6 +174,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
         ...this.stateProvider,
         ...mergeProps(this.stateProvider, dynamicValues),
       };
+      console.log('applyTransformation - componentDidUpdate');
       this.applyTransformation(null, null, null);
     }
   }
@@ -214,6 +215,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
     // Wheel event
     handleWheelZoom.call(this, event);
     handleCallback(onWheel, this.getCallbackProps());
+    console.log('applyTransformation - handleWheel');
     this.applyTransformation(null, null, null);
     this.previousWheelEvent = event;
 
@@ -608,6 +610,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
         this.stateProvider.positionX = (width - width * scale) / 2;
         this.stateProvider.positionY = (rect.height - rect.height * scale) / 2;
       }
+      console.log('applyTransformation - setContentComponent');
       this.applyTransformation(null, null, null);
     });
   };

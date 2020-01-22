@@ -131,5 +131,6 @@ function handlePaddingAnimation(positionX, positionY) {
   if (!padding) return;
   this.stateProvider.positionX = positionX;
   this.stateProvider.positionY = positionY;
+  console.log('applyTransformation - handlePaddingAnimation');
   this.applyTransformation();
 }

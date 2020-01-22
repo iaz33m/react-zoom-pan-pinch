@@ -121,6 +121,7 @@ export function animateVelocity() {
     this.stateProvider.positionX = currentPositionX;
     this.stateProvider.positionY = currentPositionY;
 
+    console.log('applyTransformation - animateVelocity');
     // apply animation changes
     this.applyTransformation();
   });
