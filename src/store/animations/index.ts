@@ -45,7 +45,7 @@ export function animateComponent({ targetState, speed, type }) {
   let x = targetState.positionX;
   let y = targetState.positionY;
   
-  if(targetState.scale < resetScale){
+  if(targetState.scale <= resetScale){
     x = 0;
     y = 0;
   }
