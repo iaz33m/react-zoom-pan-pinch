@@ -333,10 +333,11 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       const {
         pan: { velocity },
         scale,
+        resetScale
       } = this.stateProvider;
 
       // start velocity animation
-      if (this.velocity && velocity && scale > 0) {
+      if (this.velocity && velocity && scale > resetScale) {
         animateVelocity.call(this);
       } else {
         // fire fit to bounds animation
