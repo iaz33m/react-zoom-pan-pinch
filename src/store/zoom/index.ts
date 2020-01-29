@@ -275,7 +275,7 @@ export function handleZoomControls(customDelta, customStep) {
   const mouseX = (Math.abs(positionX) + innerWidth / 2) / scale;
   const mouseY = (Math.abs(positionY) + innerWidth / 2) / scale;
 
-  console.log('handleZoomControls',{wrapperWidth, innerWidth});
+  console.log('handleZoomControls',{wrapperWidth, wrapperHeight});
   const newScale = handleCalculateZoom.call(
     this,
     customDelta,
