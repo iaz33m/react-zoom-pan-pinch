@@ -54,8 +54,6 @@ export function animateComponent({ targetState, speed, type }) {
   const positionXDiff = x - positionX;
   const positionYDiff = y - positionY;
 
-  console.log('Setting x,y',{x,y});
-
   if (speed === 0) {
     this.stateProvider.previousScale = this.stateProvider.scale;
     this.stateProvider.scale = targetState.scale;
