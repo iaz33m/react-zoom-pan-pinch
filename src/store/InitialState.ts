@@ -1,9 +1,9 @@
 const { innerWidth, innerHeight } = window;
 let defaultScale = innerWidth / 1000;
 
-if(innerHeight < innerWidth) {
-  defaultScale = innerHeight / 1000;
-}
+// if(innerHeight < innerWidth) {
+//   defaultScale = innerHeight / 1000;
+// }
 
 
 if(innerWidth < innerHeight && window.matchMedia("(orientation: landscape)").matches) {
