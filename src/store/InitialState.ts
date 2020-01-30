@@ -1,8 +1,18 @@
-const viewPortWidth = window.innerWidth;
-let defaultScale = viewPortWidth / 1000;
+const { innerWidth, innerHeight } = window;
+let defaultScale = innerWidth / 1000;
+
+if(innerHeight < innerWidth) {
+  defaultScale = innerHeight / 1000;
+}
+
+
 if (defaultScale > 1) {
   defaultScale = 1;
 }
+
+console.log({
+  "defaultScale": defaultScale
+});
 
 export const initialState = {
   wrapperComponent: null,

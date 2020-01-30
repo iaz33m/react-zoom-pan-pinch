@@ -271,19 +271,31 @@ export function handleZoomControls(customDelta, customStep) {
 
   const wrapperWidth = wrapperComponent.offsetWidth;
   const wrapperHeight = wrapperComponent.offsetHeight;
-  const {innerWidth} = window;
+  const {innerWidth, innerHeight} = window;
 
   let width = wrapperWidth;
   let height = wrapperHeight;
 
-  if(innerWidth < 1025){
+
+  console.log({
+    "innerWidth": innerWidth,
+    "innerHeight": innerHeight
+  });
+
+  if(innerWidth < 1025 || innerHeight < 1025){
     width = innerWidth;
     height = innerWidth;
+
+    if(innerHeight < innerWidth) {
+      width = innerHeight;
+      height = innerHeight;
+    }
+
   }
 
   const mouseX = (Math.abs(positionX) + width / 2) / scale;
   const mouseY = (Math.abs(positionY) + height / 2) / scale;
-  
+
   const newScale = handleCalculateZoom.call(
     this,
     customDelta,
