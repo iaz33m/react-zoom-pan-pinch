@@ -282,7 +282,7 @@ export function handleZoomControls(customDelta, customStep) {
     "innerHeight": innerHeight
   });
 
-  if(innerWidth < 1025 || innerHeight < 1025){
+  if(innerWidth < 1025){
     width = innerWidth;
     height = innerWidth;
 
