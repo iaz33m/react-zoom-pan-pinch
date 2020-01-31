@@ -27,7 +27,11 @@ function handleCalculateZoom(
   let targetScale = null;
 
   if (isBtnFunction) {
-    const scaleFactor = window.innerWidth * 0.0001;
+
+    let scaleFactor = window.innerWidth * 0.0001;
+    if(window.matchMedia("(orientation: landscape)").matches) {
+      scaleFactor = window.innerHeight * 0.0001;
+    }
     const zoomFactor = delta < 0 ? 30 : 20;
     targetScale =
       scale + (step - step * scaleFactor) * delta * (scale / zoomFactor);
