@@ -16,6 +16,17 @@ if(window.innerWidth < 1025 && window.matchMedia("(orientation: landscape)").mat
 }
 
 
+if(innerWidth < 600 && window.matchMedia("(orientation: landscape)").matches) {
+
+  defaultScale = innerWidth / 1500;
+
+  if(innerHeight < innerWidth) {
+    defaultScale = innerHeight / 1500;
+  }
+
+}
+
+
 
 if (defaultScale > 1) {
   defaultScale = 1;
