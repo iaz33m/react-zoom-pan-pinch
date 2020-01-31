@@ -282,14 +282,21 @@ export function handleZoomControls(customDelta, customStep) {
     "innerHeight": innerHeight
   });
 
+
+  console.log({
+    "positionx": positionX,
+    "positiony": positionY
+  });
+
   if(innerWidth < 1025){
     width = innerWidth;
     height = innerWidth;
 
-    // if(innerHeight < innerWidth) {
-    //   width = innerHeight;
-    //   height = innerHeight;
-    // }
+    if(innerHeight < innerWidth) {
+      console.log("in inner height");
+      width = innerHeight;
+      height = innerHeight;
+    }
 
   }
 
