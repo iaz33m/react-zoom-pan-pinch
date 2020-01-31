@@ -5,14 +5,17 @@ let defaultScale = innerWidth / 1000;
 //   defaultScale = innerHeight / 1000;
 // }
 
+if(window.innerWidth < 1025) {
+  if(innerWidth < innerHeight && window.matchMedia("(orientation: landscape)").matches) {
+    defaultScale = innerWidth / 1200;
+  }
 
-if(innerWidth < innerHeight && window.matchMedia("(orientation: landscape)").matches) {
-  defaultScale = innerWidth / 1200;
+  if(innerHeight < innerWidth && window.matchMedia("(orientation: landscape)")) {
+    defaultScale = innerHeight / 1200;
+  }
 }
 
-if(innerHeight < innerWidth && window.matchMedia("(orientation: landscape)")) {
-  defaultScale = innerHeight / 1200;
-}
+
 
 if (defaultScale > 1) {
   defaultScale = 1;
