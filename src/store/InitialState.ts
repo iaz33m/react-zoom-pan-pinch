@@ -1,9 +1,7 @@
 const { innerWidth, innerHeight } = window;
 let defaultScale = innerWidth / 1000;
 
-// if(innerHeight < innerWidth) {
-//   defaultScale = innerHeight / 1000;
-// }
+let scaleCoefficient = 0;
 
 if(window.innerWidth < 1025 && window.matchMedia("(orientation: landscape)").matches) {
 
@@ -12,6 +10,8 @@ if(window.innerWidth < 1025 && window.matchMedia("(orientation: landscape)").mat
   if(innerHeight < innerWidth) {
     defaultScale = innerHeight / 1200;
   }
+
+  scaleCoefficient = 50;
 
 }
 
@@ -23,7 +23,15 @@ if(innerWidth < 600 && window.matchMedia("(orientation: landscape)").matches) {
   if(innerHeight < innerWidth) {
     defaultScale = innerHeight / 1500;
   }
+  scaleCoefficient = 100;
+}
 
+if(innerWidth < 1024 && window.matchMedia("(orientation: portrait)").matches) {
+  scaleCoefficient = 100;
+}
+
+if(innerWidth < 600 && window.matchMedia("(orientation: portrait)").matches) {
+  scaleCoefficient = 120;
 }
 
 
@@ -42,7 +50,8 @@ export const initialState = {
   resetScale:defaultScale,
   previousScale: defaultScale,
   scale: defaultScale,
-  positionX: (innerWidth/2) - ((innerWidth * defaultScale)/2),
+  scaleCoefficient:scaleCoefficient,
+  positionX: 0,
   positionY: 0,
   options: {
     disabled: false,

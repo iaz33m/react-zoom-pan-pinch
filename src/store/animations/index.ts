@@ -40,7 +40,7 @@ export function animate(animationName, animationTime, callback) {
 }
 
 export function animateComponent({ targetState, speed, type }) {
-  const { scale, positionX, positionY,resetScale } = this.stateProvider;
+  const { scale, positionX, positionY,resetScale, scaleCoefficient } = this.stateProvider;
   const { innerWidth } = window;
 
   let x = targetState.positionX;
@@ -49,14 +49,15 @@ export function animateComponent({ targetState, speed, type }) {
   if(targetState.scale < resetScale){
     // x = 0;
 
-    x = (innerWidth/2) - ((innerWidth * targetState.scale)/2);
+    x = ((innerWidth/2) - ((innerWidth * targetState.scale)/2)) - scaleCoefficient;
     y = 0;
 
   }
 
   console.log({
     "m-x":x,
-    "m-y":y
+    "m-y":y,
+    "s-c":scaleCoefficient
   });
 
   const scaleDiff = targetState.scale - scale;
