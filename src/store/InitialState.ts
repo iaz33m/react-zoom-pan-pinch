@@ -42,7 +42,7 @@ export const initialState = {
   resetScale:defaultScale,
   previousScale: defaultScale,
   scale: defaultScale,
-  positionX: 0,
+  positionX: (innerWidth/2) - ((innerWidth * defaultScale)/2),
   positionY: 0,
   options: {
     disabled: false,

@@ -55,8 +55,8 @@ export function animateComponent({ targetState, speed, type }) {
   }
 
   console.log({
-    x,
-    y
+    "m-x":x,
+    "m-y":y
   });
 
   const scaleDiff = targetState.scale - scale;
