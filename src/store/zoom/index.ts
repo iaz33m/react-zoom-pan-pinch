@@ -272,7 +272,6 @@ export function handleZoomControls(customDelta, customStep) {
     wrapperComponent,
     zoomIn,
     zoomOut,
-    defaultScale,
     scaleCoefficient
   } = this.stateProvider;
 
@@ -284,34 +283,17 @@ export function handleZoomControls(customDelta, customStep) {
   let height = wrapperHeight;
 
 
-  console.log({
-    "innerWidth": innerWidth,
-    "innerHeight": innerHeight
-  });
-
-
-  console.log({
-    "positionx": positionX,
-    "positiony": positionY
-  });
 
   if(innerWidth < 1025){
     width = innerWidth;
     height = innerWidth;
 
     if(innerHeight < innerWidth) {
-      console.log("in inner height");
       width = innerHeight;
       height = innerHeight;
     }
 
   }
-
-
-  console.log({
-    "width":width,
-    "height": height
-  });
 
 
   let mouseX = (Math.abs(positionX) + width / 2) / scale;
@@ -320,16 +302,8 @@ export function handleZoomControls(customDelta, customStep) {
     mouseX = ((innerWidth/2) - ((innerWidth * scale)/2)) - scaleCoefficient;
 
   }
-
-  // const mouseX =  ((innerWidth / 2) - ((defaultScale * innerWidth) / 2)) - scaleCoefficient;
   const mouseY = (Math.abs(positionY) + height / 2) / scale;
 
-  console.log({
-    "mousex": mouseX,
-    "mousey": mouseY,
-    scaleCoefficient,
-    defaultScale
-  });
 
   const newScale = handleCalculateZoom.call(
     this,

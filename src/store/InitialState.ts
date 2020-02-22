@@ -58,7 +58,7 @@ export const initialState = {
     maxPositionY: null,
     minScale: defaultScale,
     maxScale: 8,
-    limitToBounds: true,
+    limitToBounds: false,
     centerContent: true,
     wrapperClass: "",
     contentClass: "",
