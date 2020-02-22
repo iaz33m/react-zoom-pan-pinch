@@ -47,8 +47,8 @@ export function animateComponent({ targetState, speed, type }) {
   let y = targetState.positionY;
 
   if(window.matchMedia("(orientation: landscape)").matches){
-    x = ((innerWidth/2) - ((innerWidth * targetState.scale)/2)) - scaleCoefficient;
-
+    let xy = ((innerWidth/2) - ((innerWidth * targetState.scale)/2)) - scaleCoefficient;
+    console.log(xy);
   }
 
   const scaleDiff = targetState.scale - scale;
