@@ -314,7 +314,12 @@ export function handleZoomControls(customDelta, customStep) {
   });
 
 
-  const mouseX = (Math.abs(positionX) + width / 2) / scale;
+  let mouseX = (Math.abs(positionX) + width / 2) / scale;
+
+  if(window.matchMedia("(orientation: landscape)").matches){
+    mouseX = ((innerWidth/2) - ((innerWidth * scale)/2)) - scaleCoefficient;
+
+  }
 
   // const mouseX =  ((innerWidth / 2) - ((defaultScale * innerWidth) / 2)) - scaleCoefficient;
   const mouseY = (Math.abs(positionY) + height / 2) / scale;
