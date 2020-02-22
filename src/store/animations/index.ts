@@ -40,7 +40,7 @@ export function animate(animationName, animationTime, callback) {
 }
 
 export function animateComponent({ targetState, speed, type }) {
-  const { scale, positionX, positionY,resetScale, scaleCoefficient } = this.stateProvider;
+  const { scale, positionX, positionY, scaleCoefficient } = this.stateProvider;
   const { innerWidth } = window;
 
   let x = targetState.positionX;
@@ -59,7 +59,6 @@ export function animateComponent({ targetState, speed, type }) {
     "m-y":y,
     "s-c":scaleCoefficient
   });
-
   const scaleDiff = targetState.scale - scale;
   const positionXDiff = x - positionX;
   const positionYDiff = y - positionY;
