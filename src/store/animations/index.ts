@@ -48,7 +48,7 @@ export function animateComponent({ targetState, speed, type }) {
 
   if(targetState.scale < resetScale){
     // x = 0;
-
+    console.log("here");
     x = ((innerWidth/2) - ((innerWidth * targetState.scale)/2)) - scaleCoefficient;
     y = 0;
 
