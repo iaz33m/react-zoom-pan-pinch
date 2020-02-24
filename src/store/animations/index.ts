@@ -46,10 +46,10 @@ export function animateComponent({ targetState, speed, type }) {
   let x = targetState.positionX;
   let y = targetState.positionY;
 
-  if(window.matchMedia("(orientation: landscape)").matches && window.innerWidth < 1050){
-    x = ((innerWidth/2) - ((innerWidth * targetState.scale)/2)) - scaleCoefficient;
-    console.log("here in animate section");
-  }
+  // if(window.matchMedia("(orientation: landscape)").matches && window.innerWidth < 1050){
+  //   x = ((innerWidth/2) - ((innerWidth * targetState.scale)/2)) - scaleCoefficient;
+  //   console.log("here in animate section");
+  // }
 
   const scaleDiff = targetState.scale - scale;
   const positionXDiff = x - positionX;
