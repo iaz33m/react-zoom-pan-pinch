@@ -611,7 +611,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
 
   setContentComponent = contentComponent => {
     this.setState({ contentComponent }, () => {
-      const { options, scale } = this.stateProvider;
+      const { options, scale, scaleCoefficient } = this.stateProvider;
       const { positionX, positionY } = this.props.defaultValues;
 
       console.log("set content component");
@@ -624,7 +624,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       }
 
       // remove in case
-
+      this.stateProvider.positionX = ((innerWidth/2) - ((innerWidth * scale)/2)) - scaleCoefficient;
       this.stateProvider.positionY = 0;
 
       this.applyTransformation(null, null, null);
