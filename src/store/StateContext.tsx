@@ -618,6 +618,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
         this.stateProvider.positionX = (rect.width - rect.width * scale) / 2;
         this.stateProvider.positionY = (rect.height - rect.height * scale) / 2;
       }
+      console.log("set content component");
       this.applyTransformation(null, null, null);
     });
   };
