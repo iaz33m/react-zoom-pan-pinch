@@ -288,12 +288,6 @@ export function handleZoomControls(customDelta, customStep) {
   if(innerWidth < 1025){
     width = innerWidth;
     height = innerWidth;
-
-    if(innerHeight < innerWidth) {
-      width = innerHeight;
-      height = innerHeight;
-    }
-
   }
 
 
@@ -309,9 +303,9 @@ export function handleZoomControls(customDelta, customStep) {
   });
 
   if(window.matchMedia("(orientation: landscape)").matches){
-    mouseX = ((innerWidth/2) - ((innerWidth * scale)/2)) - scaleCoefficient;
+    let youseX = ((innerWidth/2) - ((innerWidth * scale)/2)) - scaleCoefficient;
     console.log({
-      "mouseX": mouseX
+      "mouseX": youseX
     });
   }
 
