@@ -301,7 +301,7 @@ export function handleZoomControls(customDelta, customStep) {
     width = innerHeight;
     height = innerHeight;
 
-    mouseX = (innerWidth / 2) - scaleCoefficient;
+    mouseX = innerWidth / 2;
     mouseY = (wrapperHeight * scale) / 2;
 
 
