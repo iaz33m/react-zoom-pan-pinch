@@ -293,7 +293,7 @@ export function handleZoomControls(customDelta, customStep) {
 
   if(window.matchMedia("(orientation: landscape)").matches && innerWidth < 900) {
     width = innerHeight;
-    height = innerWidth;
+    height = innerHeight;
   }
 
 
