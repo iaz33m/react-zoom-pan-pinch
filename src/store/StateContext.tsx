@@ -631,6 +631,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       return console.error("There is no content component");
     const transform = `translate(${posX || positionX}px, ${posY ||
       positionY}px) scale(${newScale || scale})`;
+    console.log({transform});
     contentComponent.style.transform = transform;
     contentComponent.style.WebkitTransform = transform;
     // force update to inject state to the context
