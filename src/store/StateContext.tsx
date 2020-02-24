@@ -172,7 +172,13 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
 
     const { dynamicValues: oldDynamicValues } = oldProps;
 
-    if (oldDynamicValues && !_.isEqual(oldDynamicValues, dynamicValues)) {
+    console.log("Onload Update......", {
+      oldDynamicValues,
+      dynamicValues
+    });
+
+    if (oldDynamicValues && oldDynamicValues !== dynamicValues) {
+    // if (oldDynamicValues && !_.isEqual(oldDynamicValues, dynamicValues)) {
       this.animation = null;
       this.stateProvider = {
         ...this.stateProvider,
