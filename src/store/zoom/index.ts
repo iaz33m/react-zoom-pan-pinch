@@ -291,38 +291,29 @@ export function handleZoomControls(customDelta, customStep) {
   }
 
 
+  let mouseX = (Math.abs(positionX) + width / 2) / scale;
+
+  let mouseY = (Math.abs(positionY) + height / 2) / scale;
+
+
+
   if(window.matchMedia("(orientation: landscape)").matches && innerWidth < 900) {
     width = innerHeight;
     height = innerHeight;
-  }
+
+    mouseX = (innerWidth / 2) - scaleCoefficient;
+    mouseY = (wrapperHeight * scale) / 2;
 
 
-  console.log({
-    "width": width,
-    "height": height
-  });
-
-
-  let mouseX = (Math.abs(positionX) + width / 2) / scale;
-
-  console.log({
-    "initial": mouseX
-  });
-
-
-  console.log({
-    "expected": Math.abs(innerWidth) / 2
-  });
-
-  if(window.matchMedia("(orientation: landscape)").matches){
-    let youseX = ((innerWidth/2) - ((innerWidth * scale)/2)) - scaleCoefficient;
-    console.log({
-      "mouseX": youseX
+    console.log("landscape":{
+      mouseX,
+      mouseY,
+      wrapperHeight,
+      innerWidth,
+      scaleCoefficient
     });
   }
 
-
-  const mouseY = (Math.abs(positionY) + height / 2) / scale;
 
 
   const newScale = handleCalculateZoom.call(
