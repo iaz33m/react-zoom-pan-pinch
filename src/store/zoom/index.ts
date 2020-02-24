@@ -301,8 +301,8 @@ export function handleZoomControls(customDelta, customStep) {
     width = innerHeight;
     height = innerHeight;
 
-    mouseX = (innerWidth / 2) - 15;
-    mouseY = (wrapperHeight * scale) / 2;
+    mouseX = (innerWidth - 15) / 2;
+    mouseY = (800 * scale) / 2;
 
 
     console.log("landscape",{
