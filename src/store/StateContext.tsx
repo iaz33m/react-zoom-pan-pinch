@@ -168,15 +168,13 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
     }
 
     // must be at the end of the update function, updates
-    const { dynamicValues: oldDynamicValues } = oldProps;
 
-    if (oldDynamicValues && JSON.stringify(oldDynamicValues) !== JSON.stringify(dynamicValues)) {
+    if (oldProps.dynamicValues && oldProps.dynamicValues !== dynamicValues) {
       this.animation = null;
       this.stateProvider = {
         ...this.stateProvider,
         ...mergeProps(this.stateProvider, dynamicValues),
       };
-      console.log("Props", { oldDynamicValues.dynamicValues });
       this.applyTransformation(null, null, null);
     }
   }
