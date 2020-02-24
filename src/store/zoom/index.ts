@@ -300,25 +300,31 @@ export function handleZoomControls(customDelta, customStep) {
     width = innerHeight;
     height = innerHeight;
 
-    mouseX = (Math.abs(positionX) + (1000*scale)/2)/scale;
-    mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
+    mouseX = (Math.abs(positionX) + (1000*scale)/2);
+    mouseY = (Math.abs(positionY) + (800*scale)/2);
 
     if(hash.includes('1')){
-      mouseX = (Math.abs(positionX) + ((1000*scale)-15)/2)/scale;
-      mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
+      mouseX = (Math.abs(positionX) + ((1000*scale)-15)/2);
+      mouseY = (Math.abs(positionY) + (800*scale)/2);
       console.log('Case - 1');
     }
 
     if(hash.includes('2')){
-      mouseX = (Math.abs(positionX) + ((innerWidth*scale)-15)/2)/scale;
-      mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
+      mouseX = (Math.abs(positionX) + ((innerWidth*scale)-15)/2);
+      mouseY = (Math.abs(positionY) + (800*scale)/2);
       console.log('Case - 2');
     }
 
     if(hash.includes('3')){
-      mouseX = (Math.abs(positionX) + (innerWidth)/2)/scale;
-      mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
+      mouseX = (Math.abs(positionX) + (innerWidth)/2);
+      mouseY = (Math.abs(positionY) + (800*scale)/2);
       console.log('Case - 3');
+    }
+
+    if(hash.includes('4')){
+      mouseX = (((1000*scale)-15)/2);
+      mouseY = ((800*scale)/2);
+      console.log('Case - 4');
     }
 
   }
