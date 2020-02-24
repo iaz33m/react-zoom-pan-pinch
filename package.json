@@ -68,7 +68,9 @@
   "files": [
     "dist"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
   "keywords": [
     "react",
     "zoom",

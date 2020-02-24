@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import _ from 'lodash';
 import { initialState } from "./InitialState";
 import {
   mergeProps,
@@ -169,9 +170,9 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
 
     // must be at the end of the update function, updates
 
-    const { dynamicValues:oldDynamicValues} = oldProps;
+    const { dynamicValues: oldDynamicValues } = oldProps;
 
-    if (oldDynamicValues && JSON.stringify(oldDynamicValues) !== JSON.stringify(dynamicValues)) {
+    if (oldDynamicValues && !_.isEqual(oldDynamicValues, dynamicValues)) {
       this.animation = null;
       this.stateProvider = {
         ...this.stateProvider,
