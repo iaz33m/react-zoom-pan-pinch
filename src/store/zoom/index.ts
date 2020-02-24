@@ -274,7 +274,8 @@ export function handleZoomControls(customDelta, customStep) {
     zoomOut
   } = this.stateProvider;
 
-  var url_string = window.location.href; //window.location.href
+  var url_string = window.location.href; //window.location.
+  const {hash} = window.location;
   var url = new URL(url_string);
   var c = url.searchParams.get("case");
 
@@ -302,19 +303,25 @@ export function handleZoomControls(customDelta, customStep) {
     width = innerHeight;
     height = innerHeight;
 
-    if(c === '1'){
+    mouseX = (Math.abs(positionX) + (innerWidth - 15)/2)/scale;
+    mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
+
+    if(hash.includes('1')){
       mouseX = (Math.abs(positionX) + (innerWidth - 15)/2)/scale;
       mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
+      console.log('Case - 1');
     }
 
-    if(c === '2'){
+    if(hash.includes('2')){
       mouseX = (Math.abs(positionX) + (innerWidth)/2)/scale;
       mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
+      console.log('Case - 2');
     }
 
-    if(c === '3'){
+    if(hash.includes('3')){
       mouseX = (0 + (innerWidth)/2)/scale;
       mouseY = (0 + (800*scale)/2)/scale;
+      console.log('Case - 3');
     }
 
   }
