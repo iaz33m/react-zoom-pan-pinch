@@ -625,7 +625,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
 
       }
       console.log("set content component");
-      console.log(JSON.stringify(this.stateProvider));
+      console.log(this.stateProvider);
       this.applyTransformation(null, null, null);
     });
   };
