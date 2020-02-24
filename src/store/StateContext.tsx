@@ -637,6 +637,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
     // force update to inject state to the context
     this.forceUpdate();
     if (onZoomChange && previousScale !== scale) {
+      console.log('handleCallback');
       handleCallback(onZoomChange, this.getCallbackProps());
     }
   };
