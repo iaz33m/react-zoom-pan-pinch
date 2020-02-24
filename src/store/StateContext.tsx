@@ -172,11 +172,6 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
 
     const { dynamicValues: oldDynamicValues } = oldProps;
 
-    console.log("Onload Update......", {
-      oldDynamicValues,
-      dynamicValues
-    });
-
     // if (oldDynamicValues && oldDynamicValues !== dynamicValues) {
     if (oldDynamicValues && !_.isEqual(oldDynamicValues, dynamicValues)) {
       this.animation = null;
@@ -184,10 +179,6 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
         ...this.stateProvider,
         ...mergeProps(this.stateProvider, dynamicValues),
       };
-      console.log("props", {
-        oldDynamicValues,
-        dynamicValues
-      });
       this.applyTransformation(null, null, null);
     }
   }
@@ -614,9 +605,6 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       const { options, scale, scaleCoefficient } = this.stateProvider;
       const { positionX, positionY } = this.props.defaultValues;
 
-      console.log("set content component");
-      console.log(this.stateProvider);
-
       if (options.centerContent && !positionX && !positionY) {
         const rect = this.state.wrapperComponent.getBoundingClientRect();
         this.stateProvider.positionX = (rect.width - rect.width * scale) / 2;
@@ -640,13 +628,11 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       return console.error("There is no content component");
     const transform = `translate(${posX || positionX}px, ${posY ||
       positionY}px) scale(${newScale || scale})`;
-    console.log({transform});
     contentComponent.style.transform = transform;
     contentComponent.style.WebkitTransform = transform;
     // force update to inject state to the context
     this.forceUpdate();
     if (onZoomChange && previousScale !== scale) {
-      console.log('handleCallback');
       handleCallback(onZoomChange, this.getCallbackProps());
     }
   };

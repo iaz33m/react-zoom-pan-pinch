@@ -120,7 +120,7 @@ export function animateVelocity() {
     // Save panned position
     this.stateProvider.positionX = currentPositionX;
     this.stateProvider.positionY = currentPositionY;
-    console.log("apply animation changes");
+
     // apply animation changes
     this.applyTransformation();
   });

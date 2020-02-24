@@ -30,7 +30,6 @@ function handleCalculateZoom(
 
     let scaleFactor = window.innerWidth * 0.0001;
     if(window.matchMedia("(orientation: landscape)").matches) {
-      console.log("scale factor according to landscape");
       scaleFactor = window.innerHeight * 0.0001;
     }
     const zoomFactor = delta < 0 ? 30 : 20;
@@ -132,7 +131,6 @@ export function handleWheelZoom(event) {
   this.stateProvider.scale = newScale;
   this.stateProvider.positionX = x;
   this.stateProvider.positionY = y;
-  console.log('handleWheelZoom');
 
   this.applyTransformation();
 }
