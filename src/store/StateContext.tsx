@@ -176,7 +176,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
         ...this.stateProvider,
         ...mergeProps(this.stateProvider, dynamicValues),
       };
-      console.log("Props", { oldDynamicValues.dynamicValues });
+      console.log("Props", { oldDynamicValues, dynamicValues });
       this.applyTransformation(null, null, null);
     }
   }
