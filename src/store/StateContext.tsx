@@ -613,14 +613,19 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
     this.setState({ contentComponent }, () => {
       const { options, scale } = this.stateProvider;
       const { positionX, positionY } = this.props.defaultValues;
+
+      console.log("set content component");
+      console.log(this.stateProvider);
+
       if (options.centerContent && !positionX && !positionY) {
         const rect = this.state.wrapperComponent.getBoundingClientRect();
         this.stateProvider.positionX = (rect.width - rect.width * scale) / 2;
         this.stateProvider.positionY = (rect.height - rect.height * scale) / 2;
-
       }
-      console.log("set content component");
+
+      console.log("after content component");
       console.log(this.stateProvider);
+
       this.applyTransformation(null, null, null);
     });
   };
