@@ -273,8 +273,7 @@ export function handleZoomControls(customDelta, customStep) {
     positionY,
     wrapperComponent,
     zoomIn,
-    zoomOut,
-    scaleCoefficient
+    zoomOut
   } = this.stateProvider;
 
   const wrapperWidth = wrapperComponent.offsetWidth;
