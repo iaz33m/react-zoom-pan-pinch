@@ -278,7 +278,7 @@ export function handleZoomControls(customDelta, customStep) {
 
   const wrapperWidth = wrapperComponent.offsetWidth;
   const wrapperHeight = wrapperComponent.offsetHeight;
-  const {innerWidth, innerHeight} = window;
+  const {innerWidth} = window;
 
   let width = wrapperWidth;
   let height = wrapperHeight;
