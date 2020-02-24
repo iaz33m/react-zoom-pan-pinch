@@ -602,7 +602,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
 
   setContentComponent = contentComponent => {
     this.setState({ contentComponent }, () => {
-      const { options, scale, scaleCoefficient } = this.stateProvider;
+      const { options, scale } = this.stateProvider;
       const { positionX, positionY } = this.props.defaultValues;
 
       if (options.centerContent && !positionX && !positionY) {
@@ -612,7 +612,7 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       }
 
       // remove in case
-      this.stateProvider.positionX = ((innerWidth/2) - ((1000 * scale)/2)) + 10000 ;
+      this.stateProvider.positionX = ((innerWidth/2) - ((10 * scale)/2)) + 10000 ;
 
       this.stateProvider.positionY = 0;
 
