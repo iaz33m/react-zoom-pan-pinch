@@ -612,7 +612,19 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       }
 
       // remove in case
+
       this.stateProvider.positionX = ((innerWidth/2) - ((1000 * scale)/2)) - 15 ;
+
+      if(innerWidth >= 1015) {
+        this.stateProvider.positionX = 0;
+      }
+
+      console.log({
+        "x": this.stateProvider.positionX
+      });
+
+
+
 
       this.stateProvider.positionY = 0;
 
