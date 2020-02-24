@@ -305,7 +305,7 @@ export function handleZoomControls(customDelta, customStep) {
     mouseY = (wrapperHeight * scale) / 2;
 
 
-    console.log("landscape":{
+    console.log("landscape",{
       mouseX,
       mouseY,
       wrapperHeight,
