@@ -300,24 +300,24 @@ export function handleZoomControls(customDelta, customStep) {
     width = innerHeight;
     height = innerHeight;
 
-    mouseX = (Math.abs(positionX) + (innerWidth - 15)/2)/scale;
+    mouseX = (Math.abs(positionX) + (1000*scale)/2)/scale;
     mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
 
     if(hash.includes('1')){
-      mouseX = (Math.abs(positionX) + (innerWidth - 15)/2)/scale;
+      mouseX = (Math.abs(positionX) + ((1000*scale)-15)/2)/scale;
       mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
       console.log('Case - 1');
     }
 
     if(hash.includes('2')){
-      mouseX = (Math.abs(positionX) + (innerWidth)/2)/scale;
+      mouseX = (Math.abs(positionX) + ((innerWidth*scale)-15)/2)/scale;
       mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
       console.log('Case - 2');
     }
 
     if(hash.includes('3')){
-      mouseX = (0 + (innerWidth)/2)/scale;
-      mouseY = (0 + (800*scale)/2)/scale;
+      mouseX = (Math.abs(positionX) + (innerWidth)/2)/scale;
+      mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
       console.log('Case - 3');
     }
 
