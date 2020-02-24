@@ -274,10 +274,7 @@ export function handleZoomControls(customDelta, customStep) {
     zoomOut
   } = this.stateProvider;
 
-  var url_string = window.location.href; //window.location.
   const {hash} = window.location;
-  var url = new URL(url_string);
-  var c = url.searchParams.get("case");
 
 
 
