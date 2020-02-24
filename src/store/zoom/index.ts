@@ -271,7 +271,9 @@ export function handleZoomControls(customDelta, customStep) {
     positionY,
     wrapperComponent,
     zoomIn,
-    zoomOut
+    zoomOut,
+    scaleCoefficient
+
   } = this.stateProvider;
 
   const wrapperWidth = wrapperComponent.offsetWidth;
@@ -297,10 +299,10 @@ export function handleZoomControls(customDelta, customStep) {
 
   let mouseX = (Math.abs(positionX) + width / 2) / scale;
 
-  // if(window.matchMedia("(orientation: landscape)").matches){
-  //   mouseX = ((innerWidth/2) - ((innerWidth * scale)/2)) - scaleCoefficient;
+  if(window.matchMedia("(orientation: landscape)").matches){
+    mouseX = ((innerWidth/2) - ((innerWidth * scale)/2)) - scaleCoefficient;
 
-  // }
+  }
   const mouseY = (Math.abs(positionY) + height / 2) / scale;
 
 
