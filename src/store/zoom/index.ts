@@ -305,7 +305,7 @@ export function handleZoomControls(customDelta, customStep) {
 
 
   console.log({
-    "expected": (Math.abs(innerWidth) + width / 2) / scale
+    "expected": Math.abs(innerWidth) / 2
   });
 
   if(window.matchMedia("(orientation: landscape)").matches){
