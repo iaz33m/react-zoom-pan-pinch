@@ -361,6 +361,8 @@ export function resetTransformations(animationSpeed) {
   )
     return;
 
+
+
   const speed =
     typeof animationSpeed === "number" ? animationSpeed : reset.animationTime;
 
