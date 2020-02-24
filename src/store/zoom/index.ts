@@ -132,6 +132,8 @@ export function handleWheelZoom(event) {
   this.stateProvider.scale = newScale;
   this.stateProvider.positionX = x;
   this.stateProvider.positionY = y;
+  console.log('handleWheelZoom');
+
   this.applyTransformation();
 }
 

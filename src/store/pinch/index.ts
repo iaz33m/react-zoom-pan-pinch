@@ -112,5 +112,7 @@ export function handleZoomPinch(event) {
   this.stateProvider.previousScale = scale;
 
   // update component transformation
+  console.log('handleZoomPinch');
+
   this.applyTransformation();
 }
