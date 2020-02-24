@@ -40,6 +40,13 @@ if (defaultScale > 1) {
   defaultScale = 1;
 }
 
+
+let positionX = ((innerWidth/2) - ((1000 * defaultScale)/2)) - 15;
+
+if(innerWidth >= 1015) {
+  positionX = 0;
+}
+
 export const initialState = {
   wrapperComponent: null,
   contentComponent: null,
@@ -47,7 +54,7 @@ export const initialState = {
   previousScale: defaultScale,
   scale: defaultScale,
   scaleCoefficient:scaleCoefficient,
-  positionX: ((innerWidth/2) - ((1000 * defaultScale)/2)),
+  positionX: positionX,
   positionY: 0,
   options: {
     disabled: false,
