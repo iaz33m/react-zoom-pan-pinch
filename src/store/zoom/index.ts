@@ -299,6 +299,15 @@ export function handleZoomControls(customDelta, customStep) {
 
   let mouseX = (Math.abs(positionX) + width / 2) / scale;
 
+  console.log({
+    "initial": mouseX
+  });
+
+
+  console.log({
+    "expected": (Math.abs(innerWidth) + width / 2) / scale;
+  });
+
   if(window.matchMedia("(orientation: landscape)").matches){
     mouseX = ((innerWidth/2) - ((innerWidth * scale)/2)) - scaleCoefficient;
     console.log({
