@@ -177,8 +177,8 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       dynamicValues
     });
 
-    if (oldDynamicValues && oldDynamicValues !== dynamicValues) {
-    // if (oldDynamicValues && !_.isEqual(oldDynamicValues, dynamicValues)) {
+    // if (oldDynamicValues && oldDynamicValues !== dynamicValues) {
+    if (oldDynamicValues && !_.isEqual(oldDynamicValues, dynamicValues)) {
       this.animation = null;
       this.stateProvider = {
         ...this.stateProvider,
