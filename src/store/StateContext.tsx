@@ -612,7 +612,8 @@ class StateProvider extends Component<StateContextProps, StateContextState> {
       }
 
       // remove in case
-      this.stateProvider.positionX = ((innerWidth/2) - ((innerWidth * scale)/2)) - scaleCoefficient;
+      this.stateProvider.positionX = ((innerWidth/2) - ((1000 * scale)/2)) + 10000 ;
+
       this.stateProvider.positionY = 0;
 
       this.applyTransformation(null, null, null);

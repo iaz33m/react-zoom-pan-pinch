@@ -47,7 +47,7 @@ export const initialState = {
   previousScale: defaultScale,
   scale: defaultScale,
   scaleCoefficient:scaleCoefficient,
-  positionX: ((innerWidth/2) - ((1000 * defaultScale)/2)) + 1000000,
+  positionX: ((innerWidth/2) - ((1000 * defaultScale)/2)),
   positionY: 0,
   options: {
     disabled: false,
