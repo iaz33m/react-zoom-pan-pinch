@@ -40,8 +40,8 @@ export function animate(animationName, animationTime, callback) {
 }
 
 export function animateComponent({ targetState, speed, type }) {
-  const { scale, positionX, positionY, scaleCoefficient } = this.stateProvider;
-  const { innerWidth } = window;
+  const { scale, positionX, positionY } = this.stateProvider;
+  // const { innerWidth } = window;
 
   let x = targetState.positionX;
   let y = targetState.positionY;
