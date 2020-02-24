@@ -274,13 +274,10 @@ export function handleZoomControls(customDelta, customStep) {
     zoomOut
   } = this.stateProvider;
 
+  var url_string = window.location.href; //window.location.href
+  var url = new URL(url_string);
+  var c = url.searchParams.get("case");
 
-  const vars = {};
-  var url =  window.location.href;
-  url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-    vars[key] = value;
-  });
-  console.log(vars);
 
 
 
@@ -296,24 +293,31 @@ export function handleZoomControls(customDelta, customStep) {
     height = innerWidth;
   }
 
-
-
-
-
   let mouseX = (Math.abs(positionX) + width / 2) / scale;
 
   let mouseY = (Math.abs(positionY) + height / 2) / scale;
-
 
 
   if(window.matchMedia("(orientation: landscape)").matches && innerWidth < 900) {
     width = innerHeight;
     height = innerHeight;
 
-    mouseX = ((innerWidth - 15) / 2)/scale;
-    mouseY = ((800 * scale) / 2)/scale;
-  }
+    if(c === '1'){
+      mouseX = (Math.abs(positionX) + (innerWidth - 15)/2)/scale;
+      mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
+    }
 
+    if(c === '2'){
+      mouseX = (Math.abs(positionX) + (innerWidth)/2)/scale;
+      mouseY = (Math.abs(positionY) + (800*scale)/2)/scale;
+    }
+
+    if(c === '3'){
+      mouseX = (0 + (innerWidth)/2)/scale;
+      mouseY = (0 + (800*scale)/2)/scale;
+    }
+
+  }
 
 
   const newScale = handleCalculateZoom.call(
