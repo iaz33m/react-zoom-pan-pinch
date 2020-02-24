@@ -291,6 +291,12 @@ export function handleZoomControls(customDelta, customStep) {
   }
 
 
+  if(window.matchMedia("(orientation: landscape)").matches && innerWidth < 900) {
+    width = innerHeight;
+    height = innerWidth;
+  }
+
+
   let mouseX = (Math.abs(positionX) + width / 2) / scale;
 
   console.log({
