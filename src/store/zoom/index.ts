@@ -271,10 +271,18 @@ export function handleZoomControls(customDelta, customStep) {
     positionY,
     wrapperComponent,
     zoomIn,
-    zoomOut,
-    scaleCoefficient
-
+    zoomOut
   } = this.stateProvider;
+
+
+  const vars = {};
+  var url =  window.location.href;
+  url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+  });
+  console.log(vars);
+
+
 
   const wrapperWidth = wrapperComponent.offsetWidth;
   const wrapperHeight = wrapperComponent.offsetHeight;
@@ -283,12 +291,13 @@ export function handleZoomControls(customDelta, customStep) {
   let width = wrapperWidth;
   let height = wrapperHeight;
 
-
-
   if(innerWidth < 1025){
     width = innerWidth;
     height = innerWidth;
   }
+
+
+
 
 
   let mouseX = (Math.abs(positionX) + width / 2) / scale;
@@ -301,17 +310,8 @@ export function handleZoomControls(customDelta, customStep) {
     width = innerHeight;
     height = innerHeight;
 
-    mouseX = (innerWidth - 15) / 2;
-    mouseY = (800 * scale) / 2;
-
-
-    console.log("landscape",{
-      mouseX,
-      mouseY,
-      wrapperHeight,
-      innerWidth,
-      scaleCoefficient
-    });
+    mouseX = ((innerWidth - 15) / 2)/scale;
+    mouseY = ((800 * scale) / 2)/scale;
   }
 
 
