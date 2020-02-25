@@ -366,8 +366,8 @@ export function handleZoomControls(customDelta, customStep) {
     }
 
     if(hash.includes('6')){
-      mouseX =  1000;
-      mouseY = 1000;
+      mouseX =  170.91;
+      mouseY = 136.66;
       console.log({
         mouseX,
         mouseY,
