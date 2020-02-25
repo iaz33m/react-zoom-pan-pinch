@@ -349,7 +349,7 @@ export function handleZoomControls(customDelta, customStep) {
     }
 
     if(hash.includes('5')){
-      mouseX =  positionX + ((scale * 1000)/2);
+      mouseX =  (positionX + ((scale * 1000)/2)) + 30;
       mouseY = ((800*scale)/2);
       console.log({
         mouseX,
