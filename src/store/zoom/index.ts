@@ -304,13 +304,8 @@ export function handleZoomControls(customDelta, customStep) {
     mouseY = (Math.abs(positionY) + (800*scale)/2);
 
     if(hash.includes('1')){
-      console.log({
-        wrapperHeight,
-        wrapperWidth,
-        scale
-      });
-      mouseX = (Math.abs(positionX) - (wrapperWidth)/2) ;
-      mouseY = (Math.abs(positionY) - (wrapperHeight)/2);
+      mouseX = ((innerWidth-30)/2)*scale;
+      mouseY = ((wrapperHeight*scale)/2)*scale;
       console.log({
         mouseX,
         mouseY
