@@ -365,6 +365,16 @@ export function handleZoomControls(customDelta, customStep) {
       console.log('Case - 5');
     }
 
+    if(hash.includes('6')){
+      mouseX =  1000;
+      mouseY = 1000;
+      console.log({
+        mouseX,
+        mouseY,
+      });
+      console.log('Case - 6');
+    }
+
   }
 
 
