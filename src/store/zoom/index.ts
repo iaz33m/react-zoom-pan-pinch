@@ -307,6 +307,9 @@ export function handleZoomControls(customDelta, customStep) {
     innerHeight,
   });
 
+  console.log("Branch V2");
+
+
   if(window.matchMedia("(orientation: landscape)").matches && innerWidth < 900) {
     width = innerHeight;
     height = innerHeight;
@@ -354,6 +357,8 @@ export function handleZoomControls(customDelta, customStep) {
       });
       console.log('Case - 4');
     }
+
+
 
     if(hash.includes('5')){
       mouseX =  (positionX + ((scale * wrapperWidth)/2)) + 30;
