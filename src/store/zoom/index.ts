@@ -295,6 +295,17 @@ export function handleZoomControls(customDelta, customStep) {
 
   let mouseY = (Math.abs(positionY) + height / 2) / scale;
 
+  console.log({
+    positionX,
+    positionY,
+    scale,
+    wrapperHeight,
+    wrapperWidth,
+    scaledHeight:scale*wrapperHeight,
+    scaleWidth:scale*wrapperWidth,
+    innerWidth,
+    innerHeight,
+  });
 
   if(window.matchMedia("(orientation: landscape)").matches && innerWidth < 900) {
     width = innerHeight;
@@ -309,7 +320,6 @@ export function handleZoomControls(customDelta, customStep) {
       console.log({
         mouseX,
         mouseY,
-        positionX
       });
       console.log('Case - 1');
 
@@ -321,29 +331,26 @@ export function handleZoomControls(customDelta, customStep) {
       console.log({
         mouseX,
         mouseY,
-        positionX
       });
       console.log('Case - 2');
     }
 
     if(hash.includes('3')){
-      mouseX =  (((innerWidth-30)/2)*scale) + (positionX*scale);
-      mouseY = ((wrapperHeight*scale)/2)*scale;
+      mouseX =  (positionX + ((scale * 1000)/2)) + 60;
+      mouseY = ((800*scale)/2);
       console.log({
         mouseX,
         mouseY,
-        positionX
       });
       console.log('Case - 3');
     }
 
     if(hash.includes('4')){
-      mouseX =  (((innerWidth-30)/2)*scale) - (positionX*scale);
-      mouseY = ((wrapperHeight*scale)/2)*scale;
+      mouseX =  (positionX + ((scale * 1000)/2));
+      mouseY = ((800*scale)/2);
       console.log({
         mouseX,
         mouseY,
-        positionX
       });
       console.log('Case - 4');
     }
@@ -354,7 +361,6 @@ export function handleZoomControls(customDelta, customStep) {
       console.log({
         mouseX,
         mouseY,
-        positionX
       });
       console.log('Case - 5');
     }
