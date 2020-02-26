@@ -40,10 +40,6 @@ if (defaultScale > 1) {
   defaultScale = 1;
 }
 
-console.log({
-  "defaultScale": defaultScale
-});
-
 export const initialState = {
   wrapperComponent: null,
   contentComponent: null,
