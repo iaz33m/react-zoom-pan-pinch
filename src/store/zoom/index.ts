@@ -29,10 +29,7 @@ function handleCalculateZoom(
   if (isBtnFunction) {
 
     let scaleFactor = window.innerWidth * 0.0001;
-    if(window.matchMedia("(orientation: landscape)").matches) {
-      console.log("scale factor according to landscape");
-      scaleFactor = window.innerHeight * 0.0001;
-    }
+
     const zoomFactor = delta < 0 ? 30 : 20;
     targetScale =
       scale + (step - step * scaleFactor) * delta * (scale / zoomFactor);
@@ -280,11 +277,6 @@ export function handleZoomControls(customDelta, customStep) {
 
   let width = wrapperWidth;
   let height = wrapperHeight;
-
-  console.log({
-    "positionx": positionX,
-    "positiony": positionY
-  });
 
   if(innerWidth < 1025){
     width = innerWidth;
